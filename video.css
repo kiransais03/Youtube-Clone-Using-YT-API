@@ -1,19 +1,44 @@
-body{
-
-}
 *{
-    margin: 0 ;
+    font-family: 'Geologica', sans-serif;
 }
+
+body {
+    margin: 0 auto;
+    max-width: 1300px !important;
+}
+
+.root-container {
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+}
+
+
+/* Embed Video */
+
+#embedplayer {
+    /* margin-left: 30px; */
+    margin-top: 15px;
+}
+.videostats  {
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 30px; */
+}
+
+
 .video-details{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 800px;
-    background-color: rgba(151, 150, 150, 0.364);
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
+    color: black;
 }
+
+#title {
+    margin: 5px 0px;
+    color: black;
+}
+
 .stats {
     display: flex;
     align-items: center;
@@ -31,16 +56,21 @@ body{
     align-items: center;
 
 }
+
+
+/* Comments Rendering */
+
 .comments-container{
     display: flex;
     align-items: center;
     gap: 5px;
+    max-height: 100vh;
+    overflow-y: scroll;
 }
 
 .owner-details{
     display: flex;
     flex-direction: column;
-    color: gray;
 }
 
 .profile{
@@ -52,15 +82,13 @@ body{
     height: 50px;
     border-radius: 50%;
 }
-#title {
-    margin: 20px;
-}
 
 .comment {
     display: flex;
     gap: 20px;
-    color: white ;
-    padding: 20px;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-family: sans-serif;
 }
 .comment > img, .comment-reply > img {
     width: 40px;
@@ -77,8 +105,9 @@ body{
     color: gray
 }
 .comment p {
-    color: gray ;
+    font-size: 14px;
     width: 100%;
+    margin: 0px;
 }
 .options {
     display: flex; gap: 20px;
@@ -86,33 +115,12 @@ body{
 }
 .reply{
     background-color: transparent;
-    color: gray ;
     border: none ;
     cursor: pointer;
 }
-.reply:hover {
-    color: rgb(233, 223, 223) ;
-}
+
 .comment-reply{
     padding-left: 10px;
 }
 
 
-/* Styles */
-
-* {
-    font-family: "Poppins", sans-serif;
-    font-family: "Source Sans Pro", sans-serif;
-  }
-  .video-details {
-    color: white ;
-  }
-  .root-container {
-    display: grid;
-    grid-template-columns: 5fr 2fr;
-  }
-  #comments-container{
-   background-color: #3e3a3a7a;
-    max-height: 100vh;
-    overflow-y: scroll;
-  }

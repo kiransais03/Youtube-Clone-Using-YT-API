@@ -247,7 +247,8 @@ function addclass() {
 function videoplayer(id) {
   // <a href="./video.html"></a>
   console.log(id);
-  document.cookie="video_id="+ id +";path=${`/Youtube-Clone-Project/video.html`}";
+  // document.cookie="video_id="+ id +";path=${`/Youtube-Clone-Project/video.html`}";
+  localStorage.setItem("video_id",id);
   let anchor = document.createElement("a");
   anchor.href="./video.html";
   anchor.target="_blank";
