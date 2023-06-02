@@ -1,4 +1,7 @@
-let apikey="AIzaSyDrQ8epdEGb5WrkGKc5vfbmuUFjvTwTVz8";
+let apikey="AIzaSyBvRcAOZkDVl2yX6uL4hLMy5JBHp6w681k";
+
+//Storing Api Key in the local storage of the browser 
+
 localStorage.setItem("apikey",apikey);
 
 
@@ -73,6 +76,9 @@ async function addDatatoUi(jsonresult,search)
       </div>`;
       cardelem.classList.add("card-elem");
 
+      cardelem.addEventListener('click',()=>{
+        videoplayer(videoId);
+      });
      videoContent.append(cardelem);
   }
 
@@ -236,5 +242,15 @@ function addclass() {
     }
   });
     
+  //Video Click Redirect to next page by saving the Video ID in cookies
 
+function videoplayer(id) {
+  // <a href="./video.html"></a>
+  console.log(id);
+  document.cookie="video_id="+ id +";path=${`/Youtube-Clone-Project/video.html`}";
+  let anchor = document.createElement("a");
+  anchor.href="./video.html";
+  anchor.target="_blank";
+  anchor.click();
+}
 
