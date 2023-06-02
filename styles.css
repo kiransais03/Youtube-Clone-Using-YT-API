@@ -1,0 +1,250 @@
+body {
+    font-family: 'Geologica', sans-serif;
+    margin-top: 0px;
+    margin-right:10px;
+}
+
+
+/* Nav Bar */
+
+.nav-container {
+    display: flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items: center;
+}
+
+#profile-img {
+    padding-right: 20px;
+}
+#profile-img img {
+     width:30px;
+     height:30px;
+}
+
+.left-nav , .right-nav , .center-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.left-nav , .right-nav {
+    column-gap: 15px;
+}
+
+#voice-search-btn {
+   padding:10px;
+}
+
+#search-input {
+    padding-left: 16px;
+}
+
+#search-input input[type="text"] {
+    padding: 20px;
+}
+
+#searchip {
+    width:550px;
+    height:35px;
+    box-sizing: border-box;
+    border-radius: 20px 0 0 20px;
+    border: 1px solid grey;
+    border-right: 0px;
+    font-size:17px
+}
+
+
+#search-btn button {
+    border-radius: 0 20px 20px 0;
+    height: 42px;
+    padding-bottom:5px;
+    padding-right:10px;
+    width: 45px;
+    border:1px solid grey;
+    background-color:rgb(250,250,250);
+}
+
+#search-btn button:hover {
+    background-color: rgb(242,242,242);
+}
+
+button { 
+    cursor: pointer;
+    background-color: white;
+    border:0px;
+    border-radius: 40px;;
+    padding: 10px;
+}
+
+button:hover:not(#yt-logo button) {
+    background-color: rgb(242,242,242);
+}
+
+/* Main Content Section */
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    column-gap:30px;
+    flex-wrap: nowrap;
+}
+
+
+/* Side Draw */
+
+.side-draw button {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 25px;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(59,15,15);
+    padding: 0;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+.side-draw button:hover {
+    background-color: rgb(242,242,242);
+}
+
+.side-draw {
+    height:100vh;
+    overflow: scroll;
+    width: 45%;
+   
+}
+
+.side-draw div button p {
+    margin: 0;
+}
+
+.side-draw div button div {
+    margin-left: 10px;
+}
+
+.blk1 ,.blk2 {
+    padding-bottom: 10px;;
+    border-bottom: 0.5px solid grey;
+}
+
+.blk1 ,.blk2,.blk3 {
+    margin-right: 10px;
+}
+
+#home-btn button {
+    background-color: rgb(242,242,242);
+}
+
+/* Scroll Bars Arrow Hide and Design Them */
+
+
+::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Track
+  ::-webkit-scrollbar-track {
+     background: #f1f1f1;
+    border-radius: 8px;
+  } */
+
+  /* Handle */
+.side-draw::-webkit-scrollbar-thumb {
+    display: none;
+    background: #888;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+  }
+
+  /* Handle on hover */
+  .hovered::-webkit-scrollbar-thumb {
+    display: block;
+    background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    display: block;
+    background: #555; 
+}
+
+  /* Corner */
+  ::-webkit-scrollbar-corner {
+    background: #f1f1f1;
+  }
+
+
+  /* Video Content */
+
+  .video-content {
+    display: grid;
+    grid-template-columns: repeat(3,345px);
+    column-gap: 10px;
+    row-gap: 20px;
+  }
+
+  .card-elem {
+    transition: transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+
+  }
+
+  .card-elem:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+  }
+
+.video-thumbnail img {
+    border-radius: 10px;
+}
+
+.chlogo-videotitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chlogo-videotitle p{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chlogo-videotitle img {
+    width: 36px;
+    height: 36px;
+    border-radius: 20px;;
+}
+
+.chname-videostats {
+    display: flex;
+    flex-direction: column;
+    padding-left: 11%;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(115,115,115);
+    font-weight: 350;
+}
+
+.chname-videostats p,.chlogo-videotitle p {
+    margin:2px;
+}
+
+.videostats {
+    display: flex;
+    justify-content: flex-start;
+}
