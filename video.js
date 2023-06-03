@@ -2,7 +2,7 @@
 // let idcookie=cookieString.split("=")[1];
 
 let apikey=localStorage.getItem("apikey");
-let vidId =localStorage.getItem("video_id")
+let vidId =localStorage.getItem("video_id");
 
 console.log("OK OK");
 
@@ -371,3 +371,25 @@ async function getvideodetails(videoid) {
     anchor.target="_self";
     anchor.click();
   }
+
+
+
+  function searchinvideopage(value) {
+    localStorage.setItem("searched",value);
+    localStorage.setItem("searchinhome","true");
+    let anchor = document.createElement("a");
+    anchor.href="./index.html";
+    anchor.target="_self";
+    anchor.click();
+  }
+
+  let searchbox = document.getElementById("searchip");
+
+  searchbox.addEventListener("keydown", function(event) {
+    //Press Enter To Search
+     if (event.keyCode === 13) {
+       if(searchbox.value.length>=1){
+        searchinvideopage(searchbox.value);
+       }
+     }
+   });

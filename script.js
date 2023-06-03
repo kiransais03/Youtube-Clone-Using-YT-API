@@ -189,6 +189,34 @@ async function searchpage() {
   }
 }
 
+function searhfromotherpage() {
+  searchpageother();
+}
+
+let qwords =localStorage.getItem("searchinhome")
+if(qwords=="true")
+{
+  searchpageother();
+  localStorage.setItem("searchinhome","false");
+}
+
+async function searchpageother() {
+  try {
+    // let query=searchbox.value;
+    let query =localStorage.getItem("searched")
+    console.log(query);
+    console.log("other page")
+  let response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${query}&type=video&key=${apikey}`);
+  let result = await response.json();
+  let search=true;
+   await addDatatoUi(result,search);
+  }
+  catch(error) {
+      // alert("Something Went Wrong,Pls Refresh.");
+      console.log(error);
+  }
+}
+
 async function getvideodetails(videoid) {
   try {
   let response = await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoid}&key=${apikey}`)
