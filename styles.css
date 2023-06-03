@@ -200,7 +200,6 @@ button:hover:not(#yt-logo button) {
     display: flex;
     flex-direction: column;
     width: 320px;
-
   }
 
   .card-elem:hover {

@@ -1,4 +1,4 @@
-let apikey="AIzaSyBvRcAOZkDVl2yX6uL4hLMy5JBHp6w681k";
+let apikey="AIzaSyBpRA5wlknTAsElg7wxpcE3oIIV4zkh_QQ";
 
 //Storing Api Key in the local storage of the browser 
 
@@ -17,7 +17,7 @@ async function homepage() {
      await addDatatoUi(result,search);
     }
     catch(error) {
-        alert("Something Went Wrong,Pls Refresh.");
+        // alert("Something Went Wrong,Pls Refresh.");
         console.log(error);
     }
 }
@@ -184,7 +184,7 @@ async function searchpage() {
    await addDatatoUi(result,search);
   }
   catch(error) {
-      alert("Something Went Wrong,Pls Refresh.");
+      // alert("Something Went Wrong,Pls Refresh.");
       console.log(error);
   }
 }
@@ -196,7 +196,7 @@ async function getvideodetails(videoid) {
   return result;
   }
   catch(error) {
-    alert("Something Went Wrong,Pls Refresh.");
+    // alert("Something Went Wrong,Pls Refresh.");
     console.log(error);
 }
 }
@@ -242,7 +242,7 @@ function addclass() {
     }
   });
     
-  //Video Click Redirect to next page by saving the Video ID in cookies
+  //Video Click Redirect to next page by saving the Video ID in Local Storage
 
 function videoplayer(id) {
   // <a href="./video.html"></a>
@@ -251,7 +251,7 @@ function videoplayer(id) {
   localStorage.setItem("video_id",id);
   let anchor = document.createElement("a");
   anchor.href="./video.html";
-  anchor.target="_blank";
+  anchor.target="_self";
   anchor.click();
 }
 
