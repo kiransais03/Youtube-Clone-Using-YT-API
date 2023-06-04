@@ -103,15 +103,14 @@ function getviews(n){
 
 
 
-function formatDate(duration) {
+function formatDate(dateandtime) {
   // PT2H33M23S
   // 2023-06-01T09:07:19Z
-
   // Get the current date and time
 var currentDate = new Date();
 
 // Example published date from YouTube API
-var publishedDate = "2023-06-01T09:07:19Z";
+var publishedDate = dateandtime;
 
 // Convert the YouTube API date string to a Date object
 var videoDate = new Date(publishedDate);
