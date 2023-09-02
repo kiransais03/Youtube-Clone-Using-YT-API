@@ -19,18 +19,19 @@ else {
     console.log("HEllo");
 }
 
-function onLoadScript() {
+async function onLoadScript() {
 //   if (YT) {
     new YT.Player("embedplayer", {
       height: "500",
       width: "900",
       videoId:vidId,
       events: {
-        onReady: (event) => {
+        onReady:async (event) => {
             console.log(event);
             extractVideoDetails(event.target.h.g.videoId);
-            fetchStats(event.target.h.g.videoId);
-            recomvideos(event.target.h.g.videoId)
+            await fetchStats(event.target.h.g.videoId);
+            await recomvideos(event.target.h.g.videoId);
+            event.target.playVideo();
         }
       }
     });
@@ -61,6 +62,8 @@ async function extractVideoDetails(videoId){
     
 }
 
+let global_currvideodata;
+
 const videostatsContainer = document.getElementsByClassName("video-details")[0];
 
 async function  fetchStats(videoId){
@@ -70,6 +73,7 @@ async function  fetchStats(videoId){
         const response = await fetch(endpoint);
         const result = await response.json();
         const item = result.items[0] ;
+        global_currvideodata = item;
         const title = document.getElementById("title");
         title.innerText = item.snippet.title ;
         console.log(item.snippet.title);
@@ -216,7 +220,7 @@ async function loadComments(element){
 
 async function recomvideos(videoId) {
 try{
-  let response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&regionCode=IN&type=video&key=${apikey}`);
+  let response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${global_currvideodata.snippet.title}&maxResults=50&regionCode=IN&type=video&key=${apikey}`);
   let result = await response.json();
   addrecomvideostoUi(result);
     }
@@ -259,7 +263,9 @@ let recomcontent = document.getElementsByClassName("recommendedvideos")[0];
     </div>`;
      
 
-      recomcardelem.addEventListener('click',()=>{
+      recomcardelem.addEventListener('click',(e)=>{
+        e.preventDefault();
+        console.log("CLicked video id",videoId)
         videoplayer(videoId);
       });
      recomcontent.append(recomcardelem);

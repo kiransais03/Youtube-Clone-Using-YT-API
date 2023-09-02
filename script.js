@@ -5,9 +5,21 @@ let apikey="AIzaSyDkX08tHh1FxbBIqoar2qZXpHXX-i0q158";
 localStorage.setItem("apikey",apikey);
 
 
-// Home Page
+let qwords =localStorage.getItem("searchinhome");
 
 let endpoint =`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=51&regionCode=IN&key=${apikey}`;
+
+if(qwords=="true")
+{
+  searchpageother();
+  localStorage.setItem("searchinhome","false");
+}
+else {
+  homepage();
+}
+
+// Home Page
+
 
 async function homepage() {
     try {
@@ -22,7 +34,7 @@ async function homepage() {
     }
 }
 
-homepage();
+
 
 async function addDatatoUi(jsonresult,search) 
 {
@@ -192,12 +204,7 @@ function searhfromotherpage() {
   searchpageother();
 }
 
-let qwords =localStorage.getItem("searchinhome")
-if(qwords=="true")
-{
-  searchpageother();
-  localStorage.setItem("searchinhome","false");
-}
+
 
 async function searchpageother() {
   try {
