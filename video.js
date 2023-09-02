@@ -212,11 +212,11 @@ async function loadComments(element){
 }
 
 
-
+// let response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&regionCode=IN&relatedToVideoId=${videoId}&type=video&key=${apikey}`);
 
 async function recomvideos(videoId) {
 try{
-  let response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&regionCode=IN&relatedToVideoId=${videoId}&type=video&key=${apikey}`);
+  let response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&regionCode=IN&type=video&key=${apikey}`);
   let result = await response.json();
   addrecomvideostoUi(result);
     }
